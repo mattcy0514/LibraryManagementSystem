@@ -8,7 +8,6 @@ RECTANGLE Library {
   - books: vector<Book>
   - users: vector<User>
   - transactions: vector<Transaction>
-  - fines: vector<Fine>
   + getInstance(): Library
   + addBook(book: Book): void
   + removeBook(isbn: string): void
@@ -56,18 +55,9 @@ RECTANGLE ReturnTransaction {
   + execute(): void
 }
 
-RECTANGLE Fine {
-  - fineID: int
-  - user: User
-  - amount: double
-  + applyFine(): void
-  + payFine(): void
-}
-
 Library "1" *-- "many" Book
 Library "1" *-- "many" User
 Library "1" *-- "many" Transaction
-Library "1" *-- "many" Fine
 
 User "1" *-- "many" Book
 

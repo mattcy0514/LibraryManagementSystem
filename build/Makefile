@@ -177,30 +177,6 @@ src/CBorrowTransaction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/CBorrowTransaction.cpp.s
 .PHONY : src/CBorrowTransaction.cpp.s
 
-src/CFine.o: src/CFine.cpp.o
-.PHONY : src/CFine.o
-
-# target to build an object file
-src/CFine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/CFine.cpp.o
-.PHONY : src/CFine.cpp.o
-
-src/CFine.i: src/CFine.cpp.i
-.PHONY : src/CFine.i
-
-# target to preprocess a source file
-src/CFine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/CFine.cpp.i
-.PHONY : src/CFine.cpp.i
-
-src/CFine.s: src/CFine.cpp.s
-.PHONY : src/CFine.s
-
-# target to generate assembly for a file
-src/CFine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/CFine.cpp.s
-.PHONY : src/CFine.cpp.s
-
 src/CLibrary.o: src/CLibrary.cpp.o
 .PHONY : src/CLibrary.o
 
@@ -336,9 +312,6 @@ help:
 	@echo "... src/CBorrowTransaction.o"
 	@echo "... src/CBorrowTransaction.i"
 	@echo "... src/CBorrowTransaction.s"
-	@echo "... src/CFine.o"
-	@echo "... src/CFine.i"
-	@echo "... src/CFine.s"
 	@echo "... src/CLibrary.o"
 	@echo "... src/CLibrary.i"
 	@echo "... src/CLibrary.s"
