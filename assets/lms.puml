@@ -2,7 +2,7 @@
 !define RECTANGLE class
 !define INTERFACE interface
 
-scale 900
+scale 1800
 
 RECTANGLE Library {
   - books: vector<Book>
