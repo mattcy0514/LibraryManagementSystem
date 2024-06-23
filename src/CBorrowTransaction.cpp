@@ -10,3 +10,9 @@ void CBorrowTransaction::execute()
 {
   user.borrowBook(book);
 }
+CBook& CBorrowTransaction::getBook() {
+  return this->book;
+}
+CUser& CBorrowTransaction::getUser() {
+  return this->user;
+}

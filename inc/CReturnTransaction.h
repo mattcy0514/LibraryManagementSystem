@@ -12,6 +12,8 @@ class CReturnTransaction : public ITransaction
   public:
   CReturnTransaction(CBook& book, CUser& user);
   ~CReturnTransaction();
+  CBook& getBook();
+  CUser& getUser();
   void execute() override;
 };
 #endif

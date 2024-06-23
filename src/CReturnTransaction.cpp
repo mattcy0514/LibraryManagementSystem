@@ -10,3 +10,9 @@ void CReturnTransaction::execute()
 {
   user.returnBook(book);
 }
+CBook& CReturnTransaction::getBook() {
+  return this->book;
+}
+CUser& CReturnTransaction::getUser() {
+  return this->user;
+}

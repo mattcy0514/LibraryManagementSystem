@@ -95,7 +95,7 @@ void CBook::borrowBook()
 {
   if (this->status) {
     this->status = false;
-    std::cout << "Book is borrowed" << std::endl;
+    std::cout << this->getTitle() << " is borrowed" << std::endl;
   } else {
     std::cout << "Book cannot be borrowed" << std::endl;
   }
@@ -104,7 +104,7 @@ void CBook::returnBook()
 {
   if (!this->status) {
     this->status = true;
-    std::cout << "Book is returned" << std::endl;
+    std::cout << this->getTitle() << " is returned" << std::endl;
   } else {
     std::cout << "Book cannot be returned" << std::endl;
   }

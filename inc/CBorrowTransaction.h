@@ -12,6 +12,8 @@ class CBorrowTransaction : public ITransaction
   public:
   CBorrowTransaction(CBook& book, CUser& user);
   ~CBorrowTransaction();
+  CBook& getBook();
+  CUser& getUser();
   void execute() override;
 };
 #endif
