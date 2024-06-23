@@ -7,7 +7,6 @@ scale 900
 RECTANGLE Library {
   - books: vector<Book>
   - users: vector<User>
-  - transactions: vector<Transaction>
   - reservations: vector<Reservation>
   - fines: vector<Fine>
   + getInstance(): Library
@@ -17,6 +16,10 @@ RECTANGLE Library {
   + removeUser(userID: int): void
   + processTransaction(transaction: Transaction): void
   + searchBooks(query: string, type: string): vector<Book>
+  + reserveBook(book: Book, user: User): void
+  + cancelReservation(book: Book, user: User): void
+  + applyFine(user: User, amount: double): void
+  + payFine(user: User): void
 }
 
 RECTANGLE Book {
@@ -71,13 +74,13 @@ RECTANGLE Fine {
   - fineID: int
   - user: User
   - amount: double
+  - status: bool
   + applyFine(): void
   + payFine(): void
 }
 
 Library "1" *-- "many" Book
 Library "1" *-- "many" User
-Library "1" *-- "many" Transaction
 Library "1" *-- "many" Reservation
 Library "1" *-- "many" Fine
 
@@ -86,5 +89,4 @@ User "1" *-- "many" Reservation
 
 Transaction <|-- BorrowTransaction
 Transaction <|-- ReturnTransaction
-
 @enduml
