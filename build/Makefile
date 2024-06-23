@@ -225,30 +225,6 @@ src/CLibrary.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/CLibrary.cpp.s
 .PHONY : src/CLibrary.cpp.s
 
-src/CReservation.o: src/CReservation.cpp.o
-.PHONY : src/CReservation.o
-
-# target to build an object file
-src/CReservation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/CReservation.cpp.o
-.PHONY : src/CReservation.cpp.o
-
-src/CReservation.i: src/CReservation.cpp.i
-.PHONY : src/CReservation.i
-
-# target to preprocess a source file
-src/CReservation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/CReservation.cpp.i
-.PHONY : src/CReservation.cpp.i
-
-src/CReservation.s: src/CReservation.cpp.s
-.PHONY : src/CReservation.s
-
-# target to generate assembly for a file
-src/CReservation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/CReservation.cpp.s
-.PHONY : src/CReservation.cpp.s
-
 src/CReturnTransaction.o: src/CReturnTransaction.cpp.o
 .PHONY : src/CReturnTransaction.o
 
@@ -366,9 +342,6 @@ help:
 	@echo "... src/CLibrary.o"
 	@echo "... src/CLibrary.i"
 	@echo "... src/CLibrary.s"
-	@echo "... src/CReservation.o"
-	@echo "... src/CReservation.i"
-	@echo "... src/CReservation.s"
 	@echo "... src/CReturnTransaction.o"
 	@echo "... src/CReturnTransaction.i"
 	@echo "... src/CReturnTransaction.s"
