@@ -1,0 +1,90 @@
+@startuml
+!define RECTANGLE class
+!define INTERFACE interface
+
+scale 900
+
+RECTANGLE Library {
+  - books: vector<Book>
+  - users: vector<User>
+  - transactions: vector<Transaction>
+  - reservations: vector<Reservation>
+  - fines: vector<Fine>
+  + getInstance(): Library
+  + addBook(book: Book): void
+  + removeBook(isbn: string): void
+  + addUser(user: User): void
+  + removeUser(userID: int): void
+  + processTransaction(transaction: Transaction): void
+  + searchBooks(query: string, type: string): vector<Book>
+}
+
+RECTANGLE Book {
+  - title: string
+  - author: string
+  - ISBN: string
+  - status: bool
+  + getTitle(): string
+  + getAuthor(): string
+  + getISBN(): string
+  + isAvailable(): bool
+  + borrowBook(): void
+  + returnBook(): void
+}
+
+RECTANGLE User {
+  - userID: int
+  - name: string
+  + getUserID(): int
+  + getName(): string
+  + borrowBook(book: Book): void
+  + returnBook(book: Book): void
+  + reserveBook(book: Book): void
+  + cancelReservation(book: Book): void
+}
+
+INTERFACE Transaction {
+  + execute(): void
+}
+
+RECTANGLE BorrowTransaction {
+  - book: Book
+  - user: User
+  + execute(): void
+}
+
+RECTANGLE ReturnTransaction {
+  - book: Book
+  - user: User
+  + execute(): void
+}
+
+RECTANGLE Reservation {
+  - reservationID: int
+  - book: Book
+  - user: User
+  + reserveBook(): void
+  + cancelReservation(): void
+}
+
+RECTANGLE Fine {
+  - fineID: int
+  - user: User
+  - amount: double
+  + applyFine(): void
+  + payFine(): void
+}
+
+Library "1" *-- "many" Book
+Library "1" *-- "many" User
+Library "1" *-- "many" Transaction
+Library "1" *-- "many" Reservation
+Library "1" *-- "many" Fine
+
+User "1" *-- "many" Book
+User "1" *-- "many" Reservation
+
+Transaction <|-- BorrowTransaction
+Transaction <|-- ReturnTransaction
+
+@enduml
