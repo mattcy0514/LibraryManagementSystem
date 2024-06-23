@@ -1,26 +1,28 @@
-#include "CBook.h"
-#include "CUser.h"
-#include "CReturnTransaction.h"
-#include "CBorrowTransaction.h"
 #include <iostream>
 
-int main() {
-    CBook book1("Book1", "Author1", "ISBN-1111");
-    CUser user1(1, "User1");
+#include "CBook.h"
+#include "CBorrowTransaction.h"
+#include "CReturnTransaction.h"
+#include "CUser.h"
 
-    std::cout << "Before borrowing:\n" << book1 << std::endl;
+int main()
+{
+  CBook book1("Book1", "Author1", "ISBN-1111");
+  CUser user1(1, "User1");
 
-    // Borrow transaction
-    CBorrowTransaction borrowTrans(book1, user1);
-    borrowTrans.execute();
+  std::cout << "Before borrowing:\n" << book1 << std::endl;
 
-    std::cout << "After borrowing:\n" << book1 << std::endl;
+  // Borrow transaction
+  CBorrowTransaction borrowTrans(book1, user1);
+  borrowTrans.execute();
 
-    // Return transaction
-    CReturnTransaction returnTrans(book1, user1);
-    returnTrans.execute();
+  std::cout << "After borrowing:\n" << book1 << std::endl;
 
-    std::cout << "After returning:\n" << book1 << std::endl;
+  // Return transaction
+  CReturnTransaction returnTrans(book1, user1);
+  returnTrans.execute();
 
-    return 0;
+  std::cout << "After returning:\n" << book1 << std::endl;
+
+  return 0;
 }

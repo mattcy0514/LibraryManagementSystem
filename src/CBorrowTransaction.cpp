@@ -1,11 +1,12 @@
 #include "CBorrowTransaction.h"
-CBorrowTransaction::CBorrowTransaction(CBook& book, CUser& user):
-    book(book), user(user) {
-
+CBorrowTransaction::CBorrowTransaction(CBook& book, CUser& user)
+    : book(book), user(user)
+{
 }
-CBorrowTransaction::~CBorrowTransaction() {
-
+CBorrowTransaction::~CBorrowTransaction()
+{
 }
-void CBorrowTransaction::execute() {
-    user.borrowBook(book);
+void CBorrowTransaction::execute()
+{
+  user.borrowBook(book);
 }
